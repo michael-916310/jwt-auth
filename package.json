@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
     "mongodb": "^4.13.0",
-    "mongoose": "^6.8.2"
+    "mongoose": "^6.8.2",
+    "uuid": "^9.0.0"
   }
 }
