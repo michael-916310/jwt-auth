@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios, {AxiosHeaders} from 'axios';
 
 export const API_URL = 'http://localhost:5000/api';
 
 const api = axios.create({
     withCredentials: true,
-    baseURL: API_URL
+    baseURL: API_URL,
 })
 
-api.interceptors.request.use((config)=>{
-    if (config.headers) {
-        config.headers.Authorization =`Bearer ${localStorage.getItem('token')}`;
-    }
-    return config;
-});
+// api.defaults.headers.common['Authorization'] =`Bearer ${localStorage.getItem('token')}`;
+
+// api.interceptors.request.use((config)=>{
+//     config.headers = new AxiosHeaders({'Authorization':`Bearer ${localStorage.getItem('token')}`});
+//     return config;
+// });
 
 export default api;
