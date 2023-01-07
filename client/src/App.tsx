@@ -30,13 +30,17 @@ function App() {
 
     if (!store.isAuth) {
         return (
-            <LoginForm/>
+            <div>
+                <LoginForm/>
+                <button onClick={getUsers}>get users</button>
+            </div>
         )
     }
 
     return (
         <div>
             <h1>{store.isAuth ? `User: ${store.user.email}` : `Not authorized`}</h1>
+            <h1>{store.user.isActivated ? 'Activated' : `Not activated`}</h1>
             <button onClick={()=>store.logout()}>Logout</button>
             <div>
                 <button onClick={getUsers}>get users</button>
